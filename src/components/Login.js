@@ -1,4 +1,7 @@
 import axios from "axios";
+import Swal from "sweetalert2";
+import 'animate.css';
+
 
 function Login() {
 
@@ -17,15 +20,54 @@ function Login() {
         // Submit Handler Function
 
         if ( email === '' || password === '') {
-            console.log('Fields cannot be empty');
+          Swal.fire(
+              {
+                  titleText : 'Field still empty',
+                  text: 'Enter your email and password to log in',
+                  icon: 'warning',
+                  showClass: {
+                    popup: 'animate__animated animate__slideInDown'
+                  },
+                  hideClass: {
+                    popup: 'animate__animated animate__slideOutDown'
+                  }
+              }
+          )
             return;
         }
         if (email !== '' && !regexEmail.test(email))  {
-            console.log('Email not valid')
+            Swal.fire(
+                {
+                    titleText : 'Email not valid',
+                    text: 'Enter a valid email',
+                    icon: 'warning',
+                    showClass: {
+                      popup: 'animate__animated animate__slideInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__slideOutDown'
+                    }
+                }
+            )
+ 
             return;
         }
 
         if ( email !== 'challenge@alkemy.org' || password !== 'react' ) {
+            Swal.fire(
+                {
+                    titleText : 'Please enter a valid account',
+                    text: 'Maybe you write something wrong',
+                    footer: '<a href="https://rebrand.ly/r1ckr0l13r" target="_blank" rel="noopener noreferrer">Forgot your password?</a> ',
+                    icon: 'warning',
+                    showClass: {
+                      popup: 'animate__animated animate__slideInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__slideOutDown'
+                    }
+                }
+            )
             console.log('Please enter a valid account')
             return;
         }
