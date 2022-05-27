@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function Login() {
 
     const submitHandler = e => {
@@ -28,6 +30,11 @@ function Login() {
             return;
         }
         console.log('Ready to send info')
+        axios.post('http://challenge-react.alkemy.org', {email, password})
+        .then ( res => {
+            const token = res.data.token;
+            console.log(token)
+        })
     }
 
 
