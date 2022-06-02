@@ -1,9 +1,21 @@
 import axios from "axios";
 import Swal from "sweetalert2";
+
 import "animate.css";
+import {useNavigate} from 'react-router-dom'
+import { useEffect } from "react";
 
 function Login() {
+  const navigate = useNavigate();
   // HANDLING SUBMIT FUNCTION ============ OPEN
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/list', {replace: true});
+   }
+  })
+  
+  
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -88,7 +100,8 @@ function Login() {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log('Token recibido');
+        navigate('/', {replace: true});
+       
       });
   };
 
