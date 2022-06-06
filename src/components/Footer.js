@@ -13,6 +13,7 @@ const Footer = () => {
                 </li>
             </ul>
         </nav>
+        <p>Copyright Alkemy Challenge - Matias Semelman 2022</p>
     </footer>
   )
 }
