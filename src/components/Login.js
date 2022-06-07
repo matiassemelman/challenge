@@ -3,18 +3,13 @@ import Swal from "sweetalert2";
 
 import "animate.css";
 import {useNavigate} from 'react-router-dom'
-import { useEffect } from "react";
+
 
 function Login() {
   const navigate = useNavigate();
   // HANDLING SUBMIT FUNCTION ============ OPEN
 
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      navigate('/list', {replace: true});
-   }
-  })
-  
+  let token = localStorage.getItem('token');
   
 
   const submitHandler = (e) => {
@@ -111,6 +106,8 @@ function Login() {
 
   return (
     <>
+      {token && navigate('/', {replace: true})}
+
       <form onSubmit={submitHandler}>
         <label htmlFor="email">
           Email
