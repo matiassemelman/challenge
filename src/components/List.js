@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router";
-import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 const List = () => {
   const navigate = useNavigate();
-  let token = null;
+  let token = localStorage.getItem('token');
 
-
+    
   return (
     <div className="row">
+      {!token && navigate('/', {replace: true})}
       <div className="col-3 px-0" style={{ border: "1px solid red" }}>
         <div class="card" style={{ width: "18rem" }}>
           <img src="..." class="card-img-top" alt="..." />
