@@ -4,12 +4,8 @@ import { Link } from 'react-router-dom';
 
 const List = () => {
   const navigate = useNavigate();
+  let token = null;
 
-  useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/", { replace: true });
-    }
-  });
 
   return (
     <div className="row">
