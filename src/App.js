@@ -1,8 +1,14 @@
+// Libraries
+import { Routes, Route } from "react-router-dom";
+
+// Components
 import Header from "./components/Header";
 import Login from "./components/Login";
 import List from "./components/List";
-import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
+
+// Styles
+import './css/bootstrap.min.css'
 
 function App() {
   return (

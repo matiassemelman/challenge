@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router";
+import {useEffect} from 'react'
 
 const List = () => {
   const navigate = useNavigate();
 
-  const token = localStorage.getItem('token');
 
-  if (token === null) {
-    navigate('/login', {replace: true});
-  }  
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      navigate('/', {replace: true});
+   }
+  })
   
   return (
     <>List</>
