@@ -22,15 +22,15 @@ const List = () => {
 
   return (
     <div className="row">
-      {!token && navigate("/", { replace: true })}
-      <div className="col-3 px-0" style={{ border: "1px solid red" }}>
-        <div className="card" style={{ width: "18rem" }}>
-          <img src="..." className="card-img-top" alt="..." />
+    { movieList.map((movie, index) => {
+      return (
+        <div className="col-3" key={index} >
+        <div className="card my-4" >
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">Movie Title</h5>
+            <h5 className="card-title">{movie.title.substring(0, 20)}...</h5>
             <p className="card-text">
-              Review Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Laboriosam, dolorem.
+              {movie.overview.substring(0, 100)}...
             </p>
             <Link to="/" className="btn btn-primary">
               View details
@@ -38,6 +38,10 @@ const List = () => {
           </div>
         </div>
       </div>
+      )
+    }) }
+      {!token && navigate("/", { replace: true })}
+      
     </div>
   );
 };
