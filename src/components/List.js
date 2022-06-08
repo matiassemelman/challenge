@@ -11,7 +11,7 @@ const List = () => {
 
   useEffect(() => {
     const endpoint =
-      "https://api.themoviedb.org/3/discover/movie?api_key=d138e7809543917104c5d93b8b57e098&language=es-ES&page=1";
+      "https://api.themoviedb.org/3/discover/movie?api_key=d138e7809543917104c5d93b8b57e098&language=en-EN&page=1";
     axios.get(endpoint)
     .then((response) => {
       setMovieList(response.data.results);
