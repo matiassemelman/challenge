@@ -11,9 +11,9 @@ import './css/bootstrap.min.css'
 
 function App() {
   return (
-    <div class="container-fluid px-0">
+    <div className="container-fluid px-0">
       <Header />
-      <div class="container mt-3">
+      <div className="container mt-3">
         
       <Routes>
         <Route exact path="/" element={<Login />} />
