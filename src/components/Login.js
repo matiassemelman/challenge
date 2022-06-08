@@ -95,7 +95,7 @@ function Login() {
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate('/', {replace: true});
+        navigate('/list', {replace: true});
        
       });
   };
