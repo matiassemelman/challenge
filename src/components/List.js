@@ -4,7 +4,7 @@ import axios from "axios";
 
 const List = () => {
   const navigate = useNavigate();
-  let token = localStorage.getItem("token");
+  let token = sessionStorage.getItem("token");
 
   const [movieList, setMovieList] = useState([])
 

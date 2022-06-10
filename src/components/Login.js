@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
   // HANDLING SUBMIT FUNCTION ============ OPEN
 
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
   
 
   const submitHandler = (e) => {
@@ -81,7 +81,7 @@ function Login() {
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         const token = res.data.token;
-        localStorage.setItem('token', token)
+        sessionStorage.setItem('token', token)
 
         Swal.fire({
           titleText: "Logged in",

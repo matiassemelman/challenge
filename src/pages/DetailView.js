@@ -5,11 +5,11 @@ import {useEffect} from "react"
 
 const DetailView = () => {
   const navigate = useNavigate();
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
 
   useEffect(() => {
     !token && navigate("/", { replace: true });
-    }, [token]);
+    }, []);
     
   return (
     <>
