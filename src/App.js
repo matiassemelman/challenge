@@ -5,6 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./components/Login";
 import List from "./components/List";
+import DetailView from './pages/DetailView';
+
 
 // Styles
 import './css/bootstrap.min.css'
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Login />} />
         <Route path="/list" element={<List />} />
+        <Route path="/detail" element={<DetailView />} />
+
       </Routes>
       </div>
     </div>
