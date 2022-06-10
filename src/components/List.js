@@ -32,7 +32,7 @@ const List = () => {
             <p className="card-text">
               {movie.overview.substring(0, 100)}...
             </p>
-            <Link to="/" className="btn btn-primary">
+            <Link to="/detail" className="btn btn-primary">
               View details
             </Link>
           </div>
